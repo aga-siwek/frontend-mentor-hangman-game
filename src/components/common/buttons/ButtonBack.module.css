@@ -1,0 +1,22 @@
+.button_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background: var(--gradient-3);
+    border-width: 1px 1px 4px 1px;
+    border-style: solid;
+    border-color: var(--color-6);
+    width: calc(40rem/16);
+    height: calc(40rem/16);
+}
+
+.button_container:hover {
+    background: var(--gradient-4);
+}
+
+.back_icon {
+    width: calc(16rem/16);
+    height: calc(16rem/16);
+}
