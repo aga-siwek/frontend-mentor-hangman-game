@@ -5,3 +5,18 @@
     align-items: center;
     width: 100%;
 }
+
+.header_left {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: calc(16rem/16);
+}
+
+.category_text {
+    font-size: calc(40rem/16);
+    line-height: 120%;
+
+    color: var(--color-2)
+}

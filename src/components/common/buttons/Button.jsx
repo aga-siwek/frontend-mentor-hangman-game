@@ -21,7 +21,9 @@ function Button({color="blue", text="click me", size, onClick=null}) {
     }
 
     return (
-        <button className={`${styles.button_container} ${colorStyle()} ${sizeStyle()}`} onClick={(e) => onClick(e)}>
+        <button
+            className={`${styles.button_container} ${colorStyle()} ${sizeStyle()}`}
+            onClick={(e) => onClick(e)}>
             {text}
         </button>
     )

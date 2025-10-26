@@ -1,4 +1,8 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: calc(26rem/16);
 }
 .welcome_container {
@@ -37,9 +41,26 @@
      justify-content: center;
      align-items: center;
      gap: calc(54rem/16);
+     width: 100%;
  }
 
-.content_container {
-    width: 100%;
+
+@media (min-width: 768px) {
+    .container {}
+    .welcome_container {
+        width: calc(592rem/16);
+        border-radius: 72px;
+    }
+    .logo_container {}
+    .content_container {}
+}
+
+@media (min-width: 1440px) {
+    .container {}
+    .welcome_container {
+
+    }
+    .logo_container {}
+    .content_container {}
 }
 

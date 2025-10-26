@@ -7,7 +7,6 @@ function InfoCard({number = "00", title = "instruction title", text = "instructi
             <div className={styles.header}>
                 <div className={styles.number}>{number}</div>
                 <div className={styles.title_mobile}><h3 className={styles.title_text}>{title}</h3></div>
-
             </div>
             <div className={styles.content}>
                 <div className={styles.title}><h3 className={styles.title_text}>{title}</h3></div>

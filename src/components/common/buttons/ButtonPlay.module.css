@@ -6,10 +6,10 @@
     border-radius: 999px;
     background: var(--gradient-3);
     padding: calc(53rem/16);
-    border-width: 1px 1px 4px 1px;
+    border-width: 1px 4px 8px 4px;
     border-style: solid;
     border-color: var(--color-4);
-    box-shadow: inset 0 -5px 0 0 var(--color-9);
+    box-shadow: inset 0 -8px 0 0 var(--color-9);
     width: calc(160rem/16);
     height: calc(160rem/16);
 }
@@ -21,3 +21,15 @@
 .play_icon {
     width: calc(52rem/16);
 }
+
+@media (min-width: 768px) {
+    .button_container {
+        width: calc(200rem/16);
+        height: calc(200rem/16);
+    }
+    .play_icon {
+        width: calc(66rem/16);
+    }
+}
+
+@media (min-width: 1440px) {}

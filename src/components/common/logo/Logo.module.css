@@ -1,3 +1,10 @@
 .logo_image {
     width: calc(264rem/16);
 }
+
+
+@media (min-width: 768px) {
+    width: calc(374rem/16);
+}
+
+@media (min-width: 1440px) {}

@@ -6,14 +6,13 @@
     gap: calc(100rem/16);
     padding: calc(32rem/16) calc(26rem/16);
     width: 100%;
-
-
 }
 
 .top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -34,4 +33,41 @@
     align-items: center;
     gap: calc(16rem/16);
     width: 100%;
+}
+
+@media (min-width: 768px) {
+    .category_container {
+        padding-top: calc(61rem/16);
+        gap: calc(80rem/16);
+    }
+    .category_cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .top {
+        justify-content: start;
+    }
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .header_text {
+        font-size: calc(104rem/16);
+        letter-spacing: -0.5px;
+    }
+
+
+}
+
+@media (min-width: 1440px) {
+    .category_cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .header_text {
+        font-size: calc(136rem/16);
+        letter-spacing: -1px;
+    }
 }

@@ -10,6 +10,7 @@
 .top {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
 
@@ -27,8 +28,43 @@
     background: var(--gradient-2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: calc(32rem/16);
+    font-size: calc(48rem/16);
     line-height: 120%;
     letter-spacing: 1.05px;
-    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .top {
+        justify-content: start;
+        gap: calc(107rem/16);
+    }
+    .header_text {
+        font-size: calc(104rem/16);
+        line-height: 120%;
+        letter-spacing: -1px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .how_to_play_container {
+
+    }
+    .top {
+        justify-content: start;
+
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: calc(32rem/16);
+    }
 }

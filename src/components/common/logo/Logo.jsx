@@ -1,5 +1,5 @@
 import styles from "./Logo.module.css"
-import { ReactSVG } from 'react-svg'
+import {ReactSVG} from 'react-svg'
 import LogoImage from "/src/assets/logo.svg"
 
 function Logo() {
@@ -12,4 +12,5 @@ function Logo() {
         </div>
     )
 }
+
 export default Logo;

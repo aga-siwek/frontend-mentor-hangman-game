@@ -7,7 +7,8 @@ import {exitGame, startGame} from "../../store/gameSlice.js";
 function Category() {
     const dispatch = useDispatch()
     const onBack = () => {
-        dispatch(exitGame())}
+        dispatch(exitGame())
+    }
     const onPickCategory = (category) => {
         dispatch(startGame(category))
     }
@@ -15,7 +16,7 @@ function Category() {
     return (
         <div className={styles.category_container}>
             <div className={styles.top}>
-                <ButtonBack onClick = {() => onBack()}/>
+                <ButtonBack onClick={() => onBack()}/>
                 <div className={styles.header}>
                     <h2 className={styles.header_text}>PICK A CATEGORY</h2></div>
             </div>
@@ -27,7 +28,6 @@ function Category() {
                 <CategoryCard category="ANIMALS" onClick={onPickCategory}/>
                 <CategoryCard category="SPORTS" onClick={onPickCategory}/>
             </div>
-
         </div>
     )
 }

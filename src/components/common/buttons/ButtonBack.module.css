@@ -20,3 +20,25 @@
     width: calc(16rem/16);
     height: calc(16rem/16);
 }
+
+@media (min-width: 768px) {
+    .button_container {
+        width: calc(64rem/16);
+        height: calc(64rem/16);
+    }
+    .back_icon {
+        width: calc(28rem/16);
+        height: calc(26rem/16);
+    }
+}
+
+@media (min-width: 1440px) {
+    .button_container {
+        width: calc(94rem/16);
+        height: calc(94rem/16);
+    }
+    .back_icon {
+        width: calc(41rem/16);
+        height: calc(41rem/16);
+    }
+}

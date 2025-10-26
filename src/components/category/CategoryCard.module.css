@@ -22,3 +22,24 @@
 .category_card:hover {
     background: var(--color-6);
 }
+
+@media (min-width: 768px) {
+    .category_card {
+        width: calc(324rem/16);
+        height: calc(182rem/16);
+        padding: 0;
+        border-radius: 40px;
+        gap: calc(32rem/16);
+        font-size: calc(48rem/16);
+        letter-spacing: 2.5px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .category_card {
+        width: calc(384rem/16);
+        height: calc(190rem/16);
+        gap: calc(32rem/16);
+        font-size: calc(48rem/16);
+    }
+}

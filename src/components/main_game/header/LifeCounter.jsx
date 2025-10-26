@@ -11,8 +11,6 @@ function LifeCounter({life = 6}) {
             <div className={styles.life_cycle_container}>
                 <div className={`${styles.loss_of_life} ${showLossLife()}`}></div>
             </div>
-
-
         </div>
     )
 }
