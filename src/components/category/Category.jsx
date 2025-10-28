@@ -1,7 +1,7 @@
 import styles from "./Category.module.css";
 import ButtonBack from "../common/buttons/ButtonBack.jsx";
 import CategoryCard from "./CategoryCard.jsx";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { exitGame, startGame } from "../../store/gameSlice.js";
 
 function Category() {

@@ -1,6 +1,6 @@
 import styles from "./Button.module.css";
 
-function Button({ color = "blue", text = "click me", size, onClick = null }) {
+function Button({ color = "blue", text = "click me", onClick = null }) {
   const colorStyle = () => {
     if (color === "blue") {
       return styles.blue_color;
