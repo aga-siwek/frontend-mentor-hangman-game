@@ -1,72 +1,71 @@
 .how_to_play_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: calc(79rem / 16);
-    padding: calc(32rem / 16) calc(26rem / 16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(79rem / 16);
+  padding: calc(32rem / 16) calc(26rem / 16);
 }
 
 .top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: calc(24rem / 16);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(24rem / 16);
 }
 
 .header_text {
-    background: var(--gradient-2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: calc(48rem / 16);
-    line-height: 120%;
-    letter-spacing: 1.05px;
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: calc(48rem / 16);
+  line-height: 120%;
+  letter-spacing: 1.05px;
 }
 
 @media (min-width: 768px) {
-    .how_to_play_container {
-        max-width: calc(1216rem / 16);
-    }
+  .how_to_play_container {
+    max-width: calc(1216rem / 16);
+  }
 
-    .top {
-        justify-content: start;
-        gap: calc(107rem / 16);
-    }
+  .top {
+    justify-content: start;
+    gap: calc(107rem / 16);
+  }
 
-    .header_text {
-        font-size: calc(104rem / 16);
-        line-height: 120%;
-        letter-spacing: -1px;
-    }
+  .header_text {
+    font-size: calc(104rem / 16);
+    line-height: 120%;
+    letter-spacing: -1px;
+  }
 }
 
 @media (min-width: 1440px) {
-    .top {
-        justify-content: start;
+  .top {
+    justify-content: start;
+  }
 
-    }
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 
-    .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: calc(32rem / 16);
-    }
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: calc(32rem / 16);
+  }
 }

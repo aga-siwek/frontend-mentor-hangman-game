@@ -1,84 +1,85 @@
 :root {
-    /* Black Neutral 950*/
-    --color-1: hsl(0, 0%, 0%);
-    /*White Neutral 0*/
-    --color-2: hsl(0, 0%, 100%);
-    /*Slate 950*/
-    --color-3: hsl(216, 53%, 9%);
-    /*Slate 600*/
-    --color-4: hsl(215, 29%, 20%);
-    /*Blue 600*/
-    --color-5: hsl(223, 100%, 57%);
-    --color-5-transparent: hsla(223, 100%, 57%, 0.25);
-    /*Blue 500*/
-    --color-6: hsl(223, 100%, 68%);
-    /*Indigo 600*/
-    --color-7: hsl(250, 69%, 27%);
-    /*Indigo 400*/
-    --color-8: hsl(250, 35%, 62%);
-    --color-9: hsl(274, 91%, 57%);
-    --color-9-transparent: hsla(274, 91%, 57%, 0.25);
-    --color-10: hsl(223, 100%, 62%);
-    --color-11: hsl(283, 96%, 62%);
-    --color-12: hsl(248, 76%, 23%);
-    --color-12-transparent: hsla(248, 76%, 23%, 0.25);
-    --color-13: hsl(348, 85%, 55%);
-    --color-14: hsl(348, 70%, 35%);
-    --color-15: hsl(348, 90%, 65%);
-    --color-16: hsl(164, 70%, 45%);
-    --color-17: hsl(164, 60%, 30%);
-    --color-18: hsl(164, 80%, 55%);
-    --gradient-1: linear-gradient(180deg, #344ABA 0%, rgba(0, 20, 121, 0.8) 100%);
-    --gradient-2: linear-gradient(180deg, #67B6FF -7%, #FFFFFF 108%);
-    --gradient-3: linear-gradient(180deg, #FE71FE 16%, #7199FF 100%);
-    --gradient-4: linear-gradient(180deg, #FF95FF 0%, #A3AEFF 100%);
-    --gradient-5: linear-gradient(180deg, #1A043A 0%, #151278 70%, #2B1677 100%);
-    --gradient-5-transparent: linear-gradient(
-            180deg,
-            rgba(26, 4, 58, 0.75) 0%, rgba(21, 18, 120, 0.75) 70%, rgba(43, 22, 119, 0.75) 100%
-    )
+  /* Black Neutral 950*/
+  --color-1: hsl(0, 0%, 0%);
+  /*White Neutral 0*/
+  --color-2: hsl(0, 0%, 100%);
+  /*Slate 950*/
+  --color-3: hsl(216, 53%, 9%);
+  /*Slate 600*/
+  --color-4: hsl(215, 29%, 20%);
+  /*Blue 600*/
+  --color-5: hsl(223, 100%, 57%);
+  --color-5-transparent: hsla(223, 100%, 57%, 0.25);
+  /*Blue 500*/
+  --color-6: hsl(223, 100%, 68%);
+  /*Indigo 600*/
+  --color-7: hsl(250, 69%, 27%);
+  /*Indigo 400*/
+  --color-8: hsl(250, 35%, 62%);
+  --color-9: hsl(274, 91%, 57%);
+  --color-9-transparent: hsla(274, 91%, 57%, 0.25);
+  --color-10: hsl(223, 100%, 62%);
+  --color-11: hsl(283, 96%, 62%);
+  --color-12: hsl(248, 76%, 23%);
+  --color-12-transparent: hsla(248, 76%, 23%, 0.25);
+  --color-13: hsl(348, 85%, 55%);
+  --color-14: hsl(348, 70%, 35%);
+  --color-15: hsl(348, 90%, 65%);
+  --color-16: hsl(164, 70%, 45%);
+  --color-17: hsl(164, 60%, 30%);
+  --color-18: hsl(164, 80%, 55%);
+  --gradient-1: linear-gradient(180deg, #344aba 0%, rgba(0, 20, 121, 0.8) 100%);
+  --gradient-2: linear-gradient(180deg, #67b6ff -7%, #ffffff 108%);
+  --gradient-3: linear-gradient(180deg, #fe71fe 16%, #7199ff 100%);
+  --gradient-4: linear-gradient(180deg, #ff95ff 0%, #a3aeff 100%);
+  --gradient-5: linear-gradient(180deg, #1a043a 0%, #151278 70%, #2b1677 100%);
+  --gradient-5-transparent: linear-gradient(
+    180deg,
+    rgba(26, 4, 58, 0.75) 0%,
+    rgba(21, 18, 120, 0.75) 70%,
+    rgba(43, 22, 119, 0.75) 100%
+  );
 }
 
 html {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto auto;
-    font-family: "Mouse Memoirs", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-image: url("/src/assets/background-mobile.svg");
-    background-repeat: repeat;
-    background-size: cover;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto;
+  font-family: "Mouse Memoirs", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: url("/src/assets/background-mobile.svg");
+  background-repeat: repeat;
+  background-size: cover;
+  width: 100%;
 }
 
 #root {
-    width: 100%;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
-    body {
-        background-image: url("/src/assets/background-tablet.svg");
-    }
+  body {
+    background-image: url("/src/assets/background-tablet.svg");
+  }
 
-    #root {
-        width: auto;
-    }
+  #root {
+    width: auto;
+  }
 }
 
 @media (min-width: 1440px) {
-    body {
-        background-image: url("/src/assets/background-desktop.svg");
-    }
+  body {
+    background-image: url("/src/assets/background-desktop.svg");
+  }
 }
-

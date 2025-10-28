@@ -1,11 +1,15 @@
 .logo_image {
-    width: calc(264rem/16);
+  width: calc(264rem / 16);
 }
 
 @media (orientation: landscape) and (min-width: 320px) and (max-width: 767px) {
-    .logo_image {width: calc(200rem/16);}
+  .logo_image {
+    width: calc(200rem / 16);
+  }
 }
 
 @media (min-width: 768px) {
-    .logo_image {width: calc(374rem/16);}
+  .logo_image {
+    width: calc(374rem / 16);
+  }
 }
