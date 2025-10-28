@@ -35,7 +35,6 @@ function MainGame() {
     dispatch(exitGame());
   };
   const clickLetter = (letter) => {
-    console.log("clickLetter start", letter);
     dispatch(selectLetter(letter));
   };
 

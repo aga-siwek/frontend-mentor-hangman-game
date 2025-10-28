@@ -10,6 +10,7 @@
   border-width: 1px 2px 4px 2px;
   border-style: solid;
   width: 100%;
+  cursor: pointer;
 }
 
 .blue_color {
@@ -40,5 +41,6 @@
     font-size: calc(32rem / 16);
     line-height: 120%;
     letter-spacing: 1.75px;
+    width: auto;
   }
 }

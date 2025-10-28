@@ -10,6 +10,7 @@
   border-color: var(--color-6);
   width: calc(40rem / 16);
   height: calc(40rem / 16);
+  cursor: pointer;
 }
 
 .button_container:hover {

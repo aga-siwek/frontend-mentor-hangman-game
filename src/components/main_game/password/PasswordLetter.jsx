@@ -32,7 +32,6 @@ function PasswordLetter({ letter, found = false, gameResult }) {
   };
 
   const showWinResultOnLetter = () => {
-    console.log(gameResult);
     if (gameResult === GAME_RESULT.WIN) {
       return styles.show_win_password_letter;
     } else if (gameResult === GAME_RESULT.LOSE) {

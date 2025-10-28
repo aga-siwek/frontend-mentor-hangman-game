@@ -12,6 +12,7 @@
   box-shadow: inset 0 -8px 0 0 var(--color-9);
   width: calc(160rem / 16);
   height: calc(160rem / 16);
+  cursor: pointer;
 }
 
 .button_container:hover {
