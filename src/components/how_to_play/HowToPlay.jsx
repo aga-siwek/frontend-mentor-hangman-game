@@ -1,14 +1,16 @@
 import styles from "./HowToPlay.module.css"
 import ButtonBack from "../common/buttons/ButtonBack.jsx";
 import InfoCard from "./InfoCard.jsx";
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import {exitGame} from "../../store/gameSlice.js";
 
 function HowToPlay() {
+
     const dispatch = useDispatch()
     const onBack = () => {
         dispatch(exitGame())
     }
+
     return (
         <div className={styles.how_to_play_container}>
             <div className={styles.top}>

@@ -8,8 +8,8 @@
     border-width: 1px 1px 4px 1px;
     border-style: solid;
     border-color: var(--color-6);
-    width: calc(40rem/16);
-    height: calc(40rem/16);
+    width: calc(40rem / 16);
+    height: calc(40rem / 16);
 }
 
 .button_container:hover {
@@ -17,28 +17,30 @@
 }
 
 .menu_icon {
-    width: calc(16rem/16);
-    height: calc(16rem/16);
+    width: calc(16rem / 16);
+    height: calc(16rem / 16);
 }
-@media (orientation: landscape) and (min-width: 320px) and (max-width: 767px) {}
+
 @media (min-width: 768px) {
     .button_container {
-        width: calc(64rem/16);
-        height: calc(64rem/16);
+        width: calc(64rem / 16);
+        height: calc(64rem / 16);
     }
+
     .menu_icon {
-        width: calc(25rem/16);
-        height: calc(25rem/16);
+        width: calc(25rem / 16);
+        height: calc(25rem / 16);
     }
 }
 
 @media (min-width: 1440px) {
     .button_container {
-        width: calc(94rem/16);
-        height: calc(94rem/16);
+        width: calc(94rem / 16);
+        height: calc(94rem / 16);
     }
+
     .menu_icon {
-        width: calc(38rem/16);
-        height: calc(38rem/16);
+        width: calc(38rem / 16);
+        height: calc(38rem / 16);
     }
 }

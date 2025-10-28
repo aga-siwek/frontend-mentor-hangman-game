@@ -6,6 +6,7 @@ import {useDispatch} from 'react-redux'
 import {goToCategory, goToHowToPlay} from "../../store/gameSlice.js";
 
 function Welcome() {
+
     const dispatch = useDispatch()
     const onHowToPlay = () => {
         dispatch(goToHowToPlay())
@@ -18,7 +19,8 @@ function Welcome() {
         <div className={styles.container}>
             <div className={styles.welcome_container}>
                 <div className={styles.logo_container}>
-                    <Logo className={styles.logo}/></div>
+                    <Logo className={styles.logo}/>
+                </div>
                 <div className={styles.content_container}>
                     <ButtonPlay
                         onClick={() => onPlay()}/>

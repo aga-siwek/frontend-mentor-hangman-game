@@ -3,7 +3,7 @@ import Welcome from "./components/welcome/Welcome.jsx"
 import MainGame from "./components/main_game/MainGame.jsx";
 import Category from "./components/category/Category.jsx";
 import HowToPlay from "./components/how_to_play/HowToPlay.jsx";
-import {useSelector, useDispatch} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {GAME_STATE} from "./store/gameSlice.js";
 
 function App() {
@@ -21,6 +21,5 @@ function App() {
         </div>
     )
 }
-
 
 export default App

@@ -5,6 +5,7 @@ function LifeCounter({life = 6}) {
     const showLossLife = () => {
         return styles[`life_${life}`];
     }
+
     return (
         <div className={styles.life_container}>
             <div className={styles.life_cycle_container}>

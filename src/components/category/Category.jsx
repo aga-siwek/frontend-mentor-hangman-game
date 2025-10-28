@@ -5,6 +5,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {exitGame, startGame} from "../../store/gameSlice.js";
 
 function Category() {
+
     const dispatch = useDispatch()
     const onBack = () => {
         dispatch(exitGame())
@@ -18,7 +19,8 @@ function Category() {
             <div className={styles.top}>
                 <ButtonBack onClick={() => onBack()}/>
                 <div className={styles.header}>
-                    <h2 className={styles.header_text}>PICK A CATEGORY</h2></div>
+                    <h2 className={styles.header_text}>PICK A CATEGORY</h2>
+                </div>
             </div>
             <div className={styles.category_cards}>
                 <CategoryCard category="MOVIES" onClick={onPickCategory}/>

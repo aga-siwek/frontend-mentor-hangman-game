@@ -3,12 +3,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: calc(16rem/16);
+    gap: calc(16rem / 16);
 }
 
 .heart {
     width: 25px;
-    font-size: calc(24rem/16);
+    font-size: calc(24rem / 16);
     background: var(--gradient-3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -20,77 +20,87 @@
     align-items: center;
     justify-content: start;
     background: var(--color-2);
-    width: calc(57rem/16);
-    height: calc(16rem/16);
-    padding: calc(4rem/16);
+    width: calc(57rem / 16);
+    height: calc(16rem / 16);
+    padding: calc(4rem / 16);
     border-radius: 96px;
 }
 
 .loss_of_life {
-background: var( --color-7);
-    height: calc(8rem/16);
+    background: var(--color-7);
+    height: calc(8rem / 16);
     border-radius: 96px;
 }
 
 .life_0 {
     width: 5%;
 }
+
 .life_1 {
-    width: calc((100%/6)*1)
+    width: calc((100% / 6) * 1)
 }
+
 .life_2 {
-    width: calc((100%/6)*2)
+    width: calc((100% / 6) * 2)
 }
+
 .life_3 {
-    width: calc((100%/6)*3)
+    width: calc((100% / 6) * 3)
 }
+
 .life_4 {
-    width: calc((100%/6)*4)
+    width: calc((100% / 6) * 4)
 }
+
 .life_5 {
-    width: calc((100%/6)*5)
+    width: calc((100% / 6) * 5)
 }
+
 .life_6 {
-    width: calc((100%/6)*6)
+    width: calc((100% / 6) * 6)
 }
-@media (orientation: landscape) and (min-width: 320px) and (max-width: 767px)  {}
+
 @media (min-width: 768px) {
     .life_container {
-        gap: calc(16rem/16);
+        gap: calc(16rem / 16);
     }
+
     .heart {
         width: 54px;
-        font-size: calc(54rem/16);
+        font-size: calc(54rem / 16);
     }
+
     .life_cycle_container {
-        width: calc(160rem/16);
-        height: calc(31rem/16);
-        padding: calc(9rem/16);
+        width: calc(160rem / 16);
+        height: calc(31rem / 16);
+        padding: calc(9rem / 16);
         border-radius: 96px;
     }
 
     .loss_of_life {
-        height: calc(13rem/16);
+        height: calc(13rem / 16);
     }
 }
 
 @media (min-width: 1440px) {
     .life_container {
-        gap: calc(40rem/16);
+        gap: calc(40rem / 16);
     }
+
     .heart {
         width: 54px;
-        font-size: calc(54rem/16);
+        font-size: calc(54rem / 16);
     }
+
     .life_cycle_container {
-        width: calc(240rem/16);
-        height: calc(31rem/16);
-        padding: calc(9rem/16);
+        width: calc(240rem / 16);
+        height: calc(31rem / 16);
+        padding: calc(9rem / 16);
         border-radius: 96px;
     }
 
     .loss_of_life {
-        height: calc(13rem/16);
+        height: calc(13rem / 16);
     }
 }
 

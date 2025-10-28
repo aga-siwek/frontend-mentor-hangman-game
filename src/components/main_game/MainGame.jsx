@@ -16,8 +16,8 @@ import Pause from "./pause/Pause.jsx";
 import Summary from "./summary/Summary.jsx";
 
 function MainGame() {
-    const state = useSelector((state) => state.game)
 
+    const state = useSelector((state) => state.game)
     const dispatch = useDispatch()
     const onPauseGame = () => {
         dispatch(pauseGame())
@@ -39,20 +39,24 @@ function MainGame() {
         dispatch(selectLetter(letter))
     }
 
-
-
-    console.log(state)
-    console.log("game result from main game", state.gameResult)
-
     return (
         <div className={styles.main_game_container}>
             <Header onClick={onPauseGame} category={state.category} life={state.life}/>
             <div className={styles.main_game}>
-                <Password password={state.selectPassword} selectedLetters={state.selectedLetters}  gameResult={state.gameResult}/>
-                <Letters clickLetter={clickLetter} selectedLetters={state.selectedLetters}  gameResult={state.gameResult}/>
+                <Password
+                    password={state.selectPassword}
+                    selectedLetters={state.selectedLetters}
+                    gameResult={state.gameResult}/>
+                <Letters
+                    clickLetter={clickLetter}
+                    selectedLetters={state.selectedLetters}
+                    gameResult={state.gameResult}/>
             </div>
             {state.gameState === GAME_STATE.PAUSE &&
-                <Pause onContinueGame={onContinueGame} onNewCategory={onNewCategory} onQuitGame={onQuitGame}/>}
+                <Pause
+                    onContinueGame={onContinueGame}
+                    onNewCategory={onNewCategory}
+                    onQuitGame={onQuitGame}/>}
             {state.gameState === GAME_STATE.SUMMARY &&
                 <Summary
                     onPlayAgain={onPlayAgain}

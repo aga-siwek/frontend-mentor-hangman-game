@@ -9,7 +9,6 @@
     position: fixed;
     top: 0;
     right: 0;
-
 }
 
 .summary_container {
@@ -93,7 +92,4 @@
         font-size: calc(136rem / 16);
         letter-spacing: -1px;
     }
-}
-
-@media (min-width: 1440px) {
 }

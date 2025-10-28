@@ -9,6 +9,7 @@ function LetterBox({letter, isActive = false, onClick = null, disable}) {
             return (styles.unactive_letter)
         }
     }
+
     return (
         <button
             className={`${styles.letter_box_container} ${showLetterStatus()}`}

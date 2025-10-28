@@ -3,6 +3,7 @@ import {ReactSVG} from 'react-svg'
 import LogoImage from "/src/assets/logo.svg"
 
 function Logo() {
+
     return (
         <div className={styles.logo}>
             <div className={styles.logo_container}>

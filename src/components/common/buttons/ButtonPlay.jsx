@@ -3,6 +3,7 @@ import playIcon from "../../../assets/icon-play.svg"
 import {ReactSVG} from "react-svg";
 
 function ButtonPlay({onClick = null}) {
+
     return (
         <button
             className={styles.button_container}

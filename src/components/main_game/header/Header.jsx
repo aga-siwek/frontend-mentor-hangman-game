@@ -3,6 +3,7 @@ import ButtonMenu from "../../common/buttons/ButtonMenu.jsx";
 import LifeCounter from "./LifeCounter.jsx";
 
 function Header({onClick, category, life}) {
+
     return (
         <div className={styles.header_container}>
             <div className={styles.header_left}>

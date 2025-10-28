@@ -78,7 +78,6 @@
 }
 
 @media (min-width: 768px) {
-
     .pause_container {
         width: calc(592rem / 16);
         height: calc(534rem / 16);
@@ -92,7 +91,4 @@
         font-size: calc(134rem / 16);
         letter-spacing: -1px;
     }
-}
-
-@media (min-width: 1440px) {
 }
