@@ -4,7 +4,7 @@ import Password from "./password/Password.jsx";
 import Letters from "./letters/Letters.jsx";
 import {
     continueGame,
-    exitGame,
+    exitGame, GAME_RESULT,
     GAME_STATE,
     goToCategory,
     pauseGame,
@@ -16,12 +16,7 @@ import Pause from "./pause/Pause.jsx";
 import Summary from "./summary/Summary.jsx";
 
 function MainGame() {
-    const gameState = useSelector((state) => state.game.gameState)
-    const selectedPassword = useSelector((state) => state.game.selectPassword)
-    const selectedLetters = useSelector((state) => state.game.selectedLetters)
-    const category = useSelector((state) => state.game.category)
-    const life = useSelector((state) => state.game.life)
-    const gameResult = useSelector((state) => state.game.gameResult)
+    const state = useSelector((state) => state.game)
 
     const dispatch = useDispatch()
     const onPauseGame = () => {
@@ -30,8 +25,8 @@ function MainGame() {
     const onContinueGame = () => {
         dispatch(continueGame())
     }
-    const onPlayAgain = (chosenCategory) => {
-        dispatch(startGame(chosenCategory))
+    const onPlayAgain = () => {
+        dispatch(startGame(state.category))
     }
     const onNewCategory = () => {
         dispatch(goToCategory())
@@ -44,18 +39,27 @@ function MainGame() {
         dispatch(selectLetter(letter))
     }
 
+
+
+    console.log(state)
+    console.log("game result from main game", state.gameResult)
+
     return (
         <div className={styles.main_game_container}>
-            <Header onClick={onPauseGame} category={category} life={life}/>
+            <Header onClick={onPauseGame} category={state.category} life={state.life}/>
             <div className={styles.main_game}>
-                <Password password={selectedPassword} selectedLetters={selectedLetters}/>
-                <Letters clickLetter={clickLetter} selectedLetters={selectedLetters}/>
+                <Password password={state.selectPassword} selectedLetters={state.selectedLetters}  gameResult={state.gameResult}/>
+                <Letters clickLetter={clickLetter} selectedLetters={state.selectedLetters}  gameResult={state.gameResult}/>
             </div>
-            {gameState === GAME_STATE.PAUSE &&
+            {state.gameState === GAME_STATE.PAUSE &&
                 <Pause onContinueGame={onContinueGame} onNewCategory={onNewCategory} onQuitGame={onQuitGame}/>}
-            {gameState === GAME_STATE.SUMMARY &&
-                <Summary onPlayAgain={onPlayAgain} onNewCategory={onNewCategory} onQuitGame={onQuitGame}
-                         gameResult={gameResult} category={category}/>}
+            {state.gameState === GAME_STATE.SUMMARY &&
+                <Summary
+                    onPlayAgain={onPlayAgain}
+                    onNewCategory={onNewCategory}
+                    onQuitGame={onQuitGame}
+                    gameResult={state.gameResult}
+                />}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import styles from "./LetterBox.module.css"
 
-function LetterBox({letter, isActive = false, onClick = null,}) {
+function LetterBox({letter, isActive = false, onClick = null, disable}) {
 
     const showLetterStatus = () => {
         if (isActive) {
@@ -12,7 +12,8 @@ function LetterBox({letter, isActive = false, onClick = null,}) {
     return (
         <button
             className={`${styles.letter_box_container} ${showLetterStatus()}`}
-            onClick={() => onClick(letter)}>
+            onClick={() => onClick(letter)}
+            disabled={disable}>
             {letter}
         </button>
     )

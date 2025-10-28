@@ -7,10 +7,10 @@ function LifeCounter({life = 6}) {
     }
     return (
         <div className={styles.life_container}>
-            <div className={styles.heart}>❤</div>
             <div className={styles.life_cycle_container}>
                 <div className={`${styles.loss_of_life} ${showLossLife()}`}></div>
             </div>
+            <div className={styles.heart}>❤</div>
         </div>
     )
 }

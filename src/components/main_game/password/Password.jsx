@@ -1,7 +1,7 @@
 import styles from "./Password.module.css";
 import PasswordLetter from "./PasswordLetter.jsx";
 
-function Password({password = "Hacuna Matata", selectedLetters}) {
+function Password({password = "Hacuna Matata", selectedLetters, gameResult}) {
     const password_list = password.split(" ");
 
     return (
@@ -13,6 +13,7 @@ function Password({password = "Hacuna Matata", selectedLetters}) {
                             letter={single_letter}
                             key={`${wordIndex}_${letterIndex}_${single_letter}`}
                             found={selectedLetters === undefined ? false : selectedLetters.includes(single_letter.toUpperCase())}
+                            gameResult={gameResult}
                         />
                     ))}
                 </div>

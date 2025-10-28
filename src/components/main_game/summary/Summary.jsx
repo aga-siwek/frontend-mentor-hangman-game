@@ -18,7 +18,7 @@ function Summary({onPlayAgain, onNewCategory, onQuitGame, gameResult, category})
                         <h2 className={styles.header_text}>{checkWin()}</h2>
                     </div>
                     <div className={styles.buttons}>
-                        <Button color="blue" text="PLAY AGAIN" size="big" onClick={() => onPlayAgain(category)}/>
+                        <Button color="blue" text="PLAY AGAIN" size="big" onClick={() => onPlayAgain()}/>
                         <Button color="blue" text="NEW CATEGORY" size="big" onClick={() => onNewCategory()}/>
                         <Button color="gradient" text="QUIT GAME" size="big" onClick={() => onQuitGame()}/>
                     </div>

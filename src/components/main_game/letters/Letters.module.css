@@ -6,4 +6,12 @@
     flex-wrap: wrap;
     gap: calc(8rem/16);
 }
+@media (orientation: landscape) and (min-width: 320px) and (max-width: 767px)  {}
+@media (min-width: 768px) {
+    .letters_container {
+        gap: calc(16rem/16);
+    }
+}
+
+
 

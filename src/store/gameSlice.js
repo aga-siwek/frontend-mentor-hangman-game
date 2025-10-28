@@ -1,4 +1,4 @@
-import {createListenerMiddleware, createSlice, isAnyOf, current} from '@reduxjs/toolkit'
+import {createListenerMiddleware, createSlice, isAnyOf} from '@reduxjs/toolkit'
 import passwords from "../data.json"
 
 export const GAME_STATE = {
@@ -6,13 +6,16 @@ export const GAME_STATE = {
     HOW_TO_PLAY: "how_to_play",
     CATEGORY: "category",
     GAME: "game",
+    FLASH: "flash",
     SUMMARY: "summary",
     PAUSE: "pause"
 }
+
 export const GAME_RESULT = {
     WIN: "win",
     LOSE: "lose"
 }
+
 export const gameSlice = createSlice({
     name: 'game',
     initialState: {
@@ -25,16 +28,18 @@ export const gameSlice = createSlice({
     },
 
     reducers: {
-        goToHowToPlay: (state, action) => {
+        goToHowToPlay: (state) => {
             state.gameState = GAME_STATE.HOW_TO_PLAY
         },
-        exitGame: (state, action) => {
+        exitGame: (state) => {
             state.gameState = GAME_STATE.WELCOME
             state.selectPassword = null
             state.category = null
-
+            state.selectedLetters = []
+            state.life = 6;
+            state.gameResult = null
         },
-        goToCategory: (state, action) => {
+        goToCategory: (state) => {
             state.gameState = GAME_STATE.CATEGORY
         },
         startGame: (state, action) => {
@@ -43,31 +48,21 @@ export const gameSlice = createSlice({
             state.selectedLetters = []
             state.life = 6;
             state.gameResult = null
-            const categoryPasswords = passwords["categories"][state.category]
-            const randomChoose = (arr) => {
-                if (arr.length === 0) return null;
-                const index = Math.floor(Math.random() * arr.length);
-                return arr[index];
-            };
-            while (true) {
-                let randomPassoword = randomChoose(categoryPasswords)
-                if (!randomPassoword["selected"]) {
-                    state.selectPassword = randomPassoword["name"];
-                    randomPassoword["selected"] = true
-                    return
-                }
-                continue
-            }
+            const categoryPasswords = passwordsData["categories"][state.category]
 
+            // random choose password and delete it from passwords list
+
+            const randomIndex = randomChoose(categoryPasswords)
+            const randomPassword = passwordsData["categories"][state.category][randomIndex]
+                state.selectPassword = randomPassword["name"].toUpperCase();
+                passwordsData.categories[state.category].splice(randomIndex, 1);
         },
         selectLetter: (state, action) => {
-            if (state.selectedLetters.includes(action.payload)) {
-                return
-            }
             state.selectedLetters = [...state.selectedLetters, action.payload]
         },
-        finishGame: (state) => {
-            state.gameState = GAME_STATE.SUMMARY
+        finishGame: (state, action) => {
+            state.gameResult = action.payload;
+            state.gameState = GAME_STATE.FLASH
         },
         pauseGame: (state) => {
             state.gameState = GAME_STATE.PAUSE
@@ -78,71 +73,76 @@ export const gameSlice = createSlice({
         removeLife: (state) => {
             state.life -= 1
         },
-
-        changeGameResult: (state, action) => {
-            state.gameResult = action.payload
-            console.log("game result", state.gameResult)
-        },
-        checkIsWin: (state) => {
-            const alphabet = [
-                "A", "B", "C", "D", "E", "F", "G",
-                "H", "I", "J", "K", "L", "M", "N",
-                "O", "P", "Q", "R", "S", "T", "U",
-                "V", "W", "X", "Y", "Z"
-            ]
-            if (state.selectPassword) {
-                const letterSet = new Set(state.selectPassword
-                    .toUpperCase().split("")
-                    .filter(letter => alphabet.includes(letter)))
-                const isWin = Array
-                    .from(letterSet)
-                    .every(letter => state.selectedLetters.includes(letter))
-                if (isWin) {
-                    state.gameResult = GAME_RESULT.WIN
-                }
-            }
+        showSummary(state) {
+            state.gameState = GAME_STATE.SUMMARY
         }
     },
 })
+const passwordsData = {...passwords};
+const ALPHABET = [
+    "A", "B", "C", "D", "E", "F", "G",
+    "H", "I", "J", "K", "L", "M", "N",
+    "O", "P", "Q", "R", "S", "T", "U",
+    "V", "W", "X", "Y", "Z"
+]
+
+const randomChoose = (arr) => {
+    if (arr.length === 0) return null;
+    const index = Math.floor(Math.random() * arr.length);
+    return index;
+};
+
+const isLetterInWord = (word, letter) => word.toUpperCase().includes(letter)
+
+const isWordComplete = (word, selectedLetters) => {
+    const letterSet = new Set(word
+        .toUpperCase().split("")
+        .filter(letter => ALPHABET.includes(letter)))
+
+    const isComplete = Array
+        .from(letterSet)
+        .every(letter => selectedLetters.includes(letter))
+
+    return isComplete
+}
 
 export const listenerMiddleware = createListenerMiddleware()
-listenerMiddleware.startListening({
-    matcher: isAnyOf(gameSlice.actions.selectLetter),
-    effect: (action, listenerApi) => {
-        const state = listenerApi.getState().game
-        if (state.selectPassword
-            .toUpperCase()
-            .split("")
-            .includes(state.selectedLetters[state.selectedLetters.length - 1])) {
-            return;
-        }
-        listenerApi.dispatch(removeLife())
-    }
-})
-
-listenerMiddleware.startListening({
-    matcher: isAnyOf(gameSlice.actions.selectLetter),
-    effect: (action, listenerApi) => {
-        listenerApi.dispatch(checkIsWin())
-    }
-})
 
 listenerMiddleware.startListening({
     matcher: isAnyOf(gameSlice.actions.selectLetter),
     effect: (action, listenerApi) => {
         const state = listenerApi.getState().game
-        if (state.gameResult === GAME_RESULT.WIN) {
-            listenerApi.dispatch(finishGame())
-            return
-        }
-        else {
-            if(state.life === 0) {
-                listenerApi.dispatch(changeGameResult(GAME_RESULT.LOSE))
-                listenerApi.dispatch(finishGame())
+        const lastLetter = state.selectedLetters[state.selectedLetters.length - 1]
 
-            }
+        // check if a letter is not in the word
+        if (!isLetterInWord(state.selectPassword, lastLetter)) {
+            listenerApi.dispatch(removeLife())
         }
 
+        // check if the word is complete
+        if (isLetterInWord(state.selectPassword, lastLetter) && isWordComplete(state.selectPassword, state.selectedLetters)) {
+            listenerApi.dispatch(finishGame(GAME_RESULT.WIN))
+        }
+    }
+})
+
+listenerMiddleware.startListening({
+    matcher: isAnyOf(gameSlice.actions.removeLife),
+    effect: (action, listenerApi) => {
+        const state = listenerApi.getState().game
+
+        if (state.life === 0) {
+            listenerApi.dispatch(finishGame(GAME_RESULT.LOSE))
+        }
+    }
+})
+
+listenerMiddleware.startListening({
+    matcher: isAnyOf(gameSlice.actions.finishGame),
+    effect: (action, listenerApi) => {
+            setTimeout(() => {
+                listenerApi.dispatch(showSummary());
+            }, 2000)
     }
 })
 
@@ -157,8 +157,7 @@ export const {
     pauseGame,
     continueGame,
     removeLife,
-    changeGameResult,
-    checkIsWin
+    showSummary
 } = gameSlice.actions
 
 export default gameSlice.reducer

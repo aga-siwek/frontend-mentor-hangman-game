@@ -33,9 +33,14 @@
 .big_size {}
 .big_medium {}
 
+@media (orientation: landscape) and (min-width: 320px) and (max-width: 767px)  {}
 @media (min-width: 768px) {
     .button_container {
-        width: calc(261rem/16);
+
+        padding: calc(12rem/16) calc(64rem/16) calc(6rem/16) calc(64rem/16) ;
+        font-size: calc(32rem/16);
+        line-height: 120%;
+        letter-spacing: 1.75px;
     }
 }
 

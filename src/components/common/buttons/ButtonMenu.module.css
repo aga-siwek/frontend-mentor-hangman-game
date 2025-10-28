@@ -20,7 +20,7 @@
     width: calc(16rem/16);
     height: calc(16rem/16);
 }
-
+@media (orientation: landscape) and (min-width: 320px) and (max-width: 767px) {}
 @media (min-width: 768px) {
     .button_container {
         width: calc(64rem/16);

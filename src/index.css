@@ -9,18 +9,25 @@
     --color-4: hsl(215, 29%, 20%);
     /*Blue 600*/
     --color-5: hsl(223, 100%, 57%);
+    --color-5-transparent: hsla(223, 100%, 57%, 0.25);
     /*Blue 500*/
     --color-6: hsl(223, 100%, 68%);
     /*Indigo 600*/
     --color-7: hsl(250, 69%, 27%);
     /*Indigo 400*/
     --color-8: hsl(250, 35%, 62%);
-
     --color-9: hsl(274, 91%, 57%);
     --color-9-transparent: hsla(274, 91%, 57%, 0.25);
     --color-10: hsl(223, 100%, 62%);
     --color-11: hsl(283, 96%, 62%);
-    --color-12: hsl(244, 76%, 23%);
+    --color-12: hsl(248, 76%, 23%);
+    --color-12-transparent: hsla(248, 76%, 23%, 0.25);
+    --color-13: hsl(348, 85%, 55%);
+    --color-14: hsl(348, 70%, 35%);
+    --color-15: hsl(348, 90%, 65%);
+    --color-16: hsl(164, 70%, 45%);
+    --color-17: hsl(164, 60%, 30%);
+    --color-18: hsl(164, 80%, 55%);
     --gradient-1: linear-gradient(180deg, #344ABA 0%, rgba(0, 20, 121, 0.8) 100%);
     --gradient-2: linear-gradient(180deg, #67B6FF -7%, #FFFFFF 108%);
     --gradient-3: linear-gradient(180deg, #FE71FE 16%, #7199FF 100%);
@@ -35,7 +42,7 @@
 }
 
 html {
-    height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +60,7 @@ body {
     font-weight: 400;
     font-style: normal;
     background-image: url("/src/assets/background-mobile.svg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     width: 100%;
 }

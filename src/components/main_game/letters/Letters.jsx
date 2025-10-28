@@ -1,7 +1,8 @@
 import styles from "./Letters.module.css"
 import LetterBox from "./LetterBox.jsx";
+import {GAME_RESULT} from "../../../store/gameSlice.js";
 
-function Letters({clickLetter, selectedLetters}) {
+function Letters({clickLetter, selectedLetters, gameResult}) {
     const alphabet = [
         "A", "B", "C", "D", "E", "F", "G",
         "H", "I", "J", "K", "L", "M", "N",
@@ -13,8 +14,10 @@ function Letters({clickLetter, selectedLetters}) {
         <div className={styles.letters_container}>
             {alphabet.map((letter) =>
                 (<LetterBox key={letter} letter={letter}
-                            isActive={selectedLetters === undefined ? true : !selectedLetters.includes(letter)}
-                            onClick={clickLetter}/>))}
+                            isActive={gameResult===GAME_RESULT.WIN || gameResult===GAME_RESULT.LOSE? true :
+                                selectedLetters === undefined ? true : !selectedLetters.includes(letter)}
+                            onClick={clickLetter}
+                            disable = {selectedLetters.includes(letter)}/>))}
         </div>
     )
 }

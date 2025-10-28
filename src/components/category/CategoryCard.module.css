@@ -35,11 +35,13 @@
     }
 }
 
+
 @media (min-width: 1440px) {
     .category_card {
-        width: calc(384rem/16);
+        width: calc(386rem/16);
         height: calc(190rem/16);
         gap: calc(32rem/16);
         font-size: calc(48rem/16);
+        padding: calc(12px)
     }
 }

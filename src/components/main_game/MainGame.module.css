@@ -14,4 +14,27 @@
     justify-content: center;
     align-items: center;
     gap: calc(108rem/16);
+
+}
+@media (orientation: landscape) and (min-width: 320px) and (max-width: 767px)  {
+    .main_game_container {
+        gap: calc(32rem/16);
+        padding: 12px;
+    }
+    .main_game {
+        gap: calc(32em/16);
+    }
+
+}
+@media (min-width: 768px) {
+    .main_game_container {
+        max-width: calc(1216rem/16);
+    }
+    .main_game {
+        gap: calc(132rem/16);
+    }
+}
+
+@media (min-width: 1440px) {
+
 }
