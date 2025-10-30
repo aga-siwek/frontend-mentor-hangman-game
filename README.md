@@ -1,18 +1,62 @@
-# React + Vite
+# Hangmen Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+### Try Game:
+![hm_qr.png](src/assets/hm_qr.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://frontend-mentor-hangman-game-theta.vercel.app/
 
-## React Compiler
+## Description
+A modern web implementation of the classic Hangman game.
+Players can select categories, guess letters, and try to complete the hidden word before running out of attempts.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+### State machine
+![hm_8.jpg](src/assets/hm_8.jpg)
 
-Note: This will impact Vite dev & build performances.
+### View
+Welcome
+![hm1.png](src/assets/hm1.png)
 
-## Expanding the ESLint configuration
+How to play
+![hm_10.png](src/assets/hm_10.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Category
+![hm2.png](src/assets/hm2.png)
+
+Game
+![hm3.png](src/assets/hm3.png)
+
+Result
+![hm4.png](src/assets/hm4.png)
+![hm5.png](src/assets/hm5.png)
+![hm6.png](src/assets/hm6.png)
+![hm_9.png](src/assets/hm_9.png)
+
+Pause
+![hm_7.png](src/assets/hm_7.png)
+
+#### Gameplay Overview
+- Learn how to play Hangman from the main menu.
+- Start a game and choose a category.
+- Play with a random word selected from that category.
+- See the hidden word displayed as blanks, revealing letters as you guess correctly.
+- See your current health decrease with each incorrect letter guess.
+- Win the game by completing the entire word.
+- Lose the game after six incorrect guesses.
+- Pause the game to continue, change categories, or quit.
+- Experience an adaptive interface that adjusts to any screen size.
+- View hover and focus states for all interactive elements.
+- Navigate the entire game using only the keyboard.
+
+## Development
+
+How to install project:
+
+```
+git clone https://github.com/aga-siwek/frontend-mentor-hangman-game
+cd hangman-game
+npm install
+npm run dev
+```
