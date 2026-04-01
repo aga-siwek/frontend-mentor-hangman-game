@@ -12,3 +12,9 @@
     gap: calc(16rem / 16);
   }
 }
+
+@media (max-width: 390px) {
+  .letters_container {
+    gap: calc(4rem / 16);
+  }
+}
